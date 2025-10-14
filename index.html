@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ژنولوژی شبکه</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🌳 ژنولوژی شبکه</h1>
+            <div class="wallet-section">
+                <button id="connectWallet" class="btn-primary">🔗 اتصال کیف پول</button>
+                <span id="walletAddress" class="wallet-address">اتصال برقرار نشده</span>
+            </div>
+        </header>
+
+        <main>
+            <div class="user-info-section">
+                <h2>👤 اطلاعات کاربر</h2>
+                <div id="userInfo" class="user-info">
+                    <p>لطفاً کیف پول خود را متصل کنید</p>
+                </div>
+            </div>
+
+            <div class="tree-section">
+                <h2>📊 شبکه زیرمجموعه</h2>
+                <div class="current-user-info">
+                    <strong>کاربر فعلی:</strong>
+                    <span id="currentUserId">-</span>
+                </div>
+                <div id="treeContainer" class="tree-container">
+                    <p>پس از اتصال کیف پول، شبکه شما اینجا نمایش داده می‌شود</p>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
