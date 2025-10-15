@@ -1,0 +1,198 @@
+/* اضافه کردن استایل‌های جدید برای نمایش سریع */
+
+.binary-tree {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.tree-level {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin-bottom: 40px;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.tree-node {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.node-box {
+    background: white;
+    border: 2px solid var(--primary);
+    border-radius: var(--border-radius);
+    padding: 15px;
+    text-align: center;
+    box-shadow: var(--shadow);
+    min-width: 180px;
+    position: relative;
+    z-index: 2;
+    transition: all 0.3s ease;
+}
+
+.node-box:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.node-box.current-user {
+    background: var(--primary);
+    color: white;
+    border-color: var(--primary-dark);
+    transform: scale(1.05);
+}
+
+.node-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--gray-border);
+}
+
+.node-id {
+    font-weight: 800;
+    font-size: 1.3rem;
+    color: var(--primary);
+}
+
+.node-box.current-user .node-id {
+    color: white;
+}
+
+.badge {
+    background: var(--success);
+    color: white;
+    padding: 3px 6px;
+    border-radius: 8px;
+    font-size: 0.6rem;
+    font-weight: 700;
+}
+
+.node-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    margin-bottom: 10px;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-value {
+    font-size: 1.1rem;
+    font-weight: 800;
+    display: block;
+}
+
+.stat-label {
+    font-size: 0.7rem;
+    color: var(--gray);
+}
+
+.stat-value.left { color: var(--primary); }
+.stat-value.right { color: var(--secondary); }
+.stat-value.balance { color: var(--success); }
+
+.node-box.current-user .stat-value {
+    color: white;
+}
+
+.node-box.current-user .stat-label {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.node-children-info {
+    font-size: 1.2rem;
+    margin-top: 5px;
+}
+
+/* استایل‌های connector */
+.connector-level {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.connectors-container {
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+}
+
+.parent-connectors {
+    display: flex;
+    gap: 60px;
+    position: relative;
+}
+
+.branch-connector {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.connector-line {
+    width: 2px;
+    height: 30px;
+    background: var(--primary);
+    margin-bottom: 5px;
+}
+
+.branch-label {
+    font-size: 0.8rem;
+    color: var(--primary);
+    font-weight: 600;
+    background: white;
+    padding: 4px 8px;
+    border-radius: 12px;
+    border: 1px solid var(--primary);
+}
+
+/* نمایش واکنش‌گرا */
+@media (max-width: 768px) {
+    .tree-level {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+    
+    .connectors-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .parent-connectors {
+        gap: 30px;
+    }
+    
+    .node-box {
+        min-width: 160px;
+        padding: 12px;
+    }
+}
+
+/* انیمیشن برای نودهای جدید */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.tree-node {
+    animation: fadeInUp 0.5s ease-out;
+}
